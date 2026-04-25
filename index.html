@@ -15,6 +15,9 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
+
+    <!-- Content Security Policy (CSP) -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; font-src https://fonts.gstatic.com; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; img-src 'self' data:; script-src 'self';">
 </head>
 
 <body>
@@ -197,8 +200,7 @@
             </div>
 
             <div class="contato-form-wrapper">
-                <form class="contato-form" action="#" method="POST"
-                    onsubmit="event.preventDefault(); alert('Mensagem enviada com sucesso! (Demonstração)');">
+                <form class="contato-form" action="#" method="POST">
                     <div class="form-group">
                         <label for="nome">Seu Nome</label>
                         <input type="text" id="nome" name="nome" placeholder="John Doe" required>
@@ -226,9 +228,9 @@
                 <p>Especialista em Comunicação e Fonoaudiologia Clínica</p>
             </div>
             <div class="footer-links">
-                <a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a>
-                <a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
-                <a href="https://facebook.com" target="_blank" rel="noopener">Facebook</a>
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a>
             </div>
         </div>
         <div class="footer-bottom">
@@ -236,24 +238,8 @@
         </div>
     </footer>
 
-    <!-- Simple Script for Mobile Menu -->
-    <script>
-        const mobileMenu = document.getElementById('mobile-menu');
-        const navLinks = document.querySelector('.nav-links');
-
-        mobileMenu.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            mobileMenu.classList.toggle('active');
-        });
-
-        // Close menu when a link is clicked
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-                mobileMenu.classList.remove('active');
-            });
-        });
-    </script>
+    <!-- External Scripts -->
+    <script src="assets/js/main.js"></script>
 </body>
 
 </html>
